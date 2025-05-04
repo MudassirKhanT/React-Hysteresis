@@ -3,11 +3,20 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const [apiData, setApiData] = useState([]);
+
+  const controller = new AbortController();
+  const signal = controller.signal;
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/todos")
-      .then((res) => res.json())
-      .then((data) => setApiData(data))
-      .catch((err) => console.log(err));
+    setTimeout(() => {
+      fetch("https://jsonplaceholder.typicode.com/todos", { signal })
+        .then((res) => res.json())
+        .then((data) => setApiData(data))
+        .catch((err) => console.log(err));
+    }, 3000);
+    return () => {
+      controller.abort();
+      console.log("Clean Up Function");
+    };
   }, []);
   //   if(apiData.length==1){
   //     return(
@@ -20,16 +29,18 @@ function Home() {
 
   return (
     <>
-      {/* <ul>
+      <ul>
         {apiData &&
           apiData.map((api, index) => (
             <li key={index}>
               {api.title} - {api.userId}
             </li>
           ))}
-      </ul> */}
+      </ul>
       <h1>Home Component</h1>
-      <Link to={"/login"}>Login</Link>
+      <Link className="btn btn-warning" to={"/login"}>
+        Login
+      </Link>
     </>
   );
 }

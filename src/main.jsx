@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Home.jsx";
 import Login from "./Login.jsx";
 import NotFound from "./NotFound.jsx";
+import Counter from "./Counter.jsx";
 
 const Router = createBrowserRouter([
   {
@@ -16,6 +17,11 @@ const Router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/count",
+    element: <Counter />,
     errorElement: <NotFound />,
   },
 ]);
