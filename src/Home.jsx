@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [apiData, setApiData] = useState([]);
@@ -19,15 +20,16 @@ function Home() {
 
   return (
     <>
-      <ul>
+      {/* <ul>
         {apiData &&
           apiData.map((api, index) => (
             <li key={index}>
               {api.title} - {api.userId}
             </li>
           ))}
-      </ul>
+      </ul> */}
       <h1>Home Component</h1>
+      <Link to={"/login"}>Login</Link>
     </>
   );
 }

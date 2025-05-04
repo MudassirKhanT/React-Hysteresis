@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [pwd1, setPdw1] = useState("");
@@ -51,6 +52,9 @@ function Login() {
           Submit
         </button>
       </form>
+      <button>
+        <Link to={"/"}>Home</Link>
+      </button>
     </>
   );
 }
