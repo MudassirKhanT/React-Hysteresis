@@ -25,6 +25,7 @@ function Home() {
   //         </>
   //     )
   //   }
+
   console.log("Size:", apiData.length);
 
   return (

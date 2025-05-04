@@ -5,6 +5,7 @@ function Login() {
   const [pwd1, setPdw1] = useState("");
   const [pwd2, setPdw2] = useState("");
   const [match, setMatch] = useState(false);
+  // const [clicked, setClicked] = useState(false);
 
   function handlePassword1(event) {
     setPdw1(event.target.value);
@@ -19,6 +20,9 @@ function Login() {
     }
     console.log("Event2:", event.target.value);
   }
+  // function handleSubmit() {
+  //   setClicked(true);
+  // }
 
   return (
     <>
@@ -52,9 +56,7 @@ function Login() {
           Submit
         </button>
       </form>
-      <button>
-        <Link to={"/"}>Home</Link>
-      </button>
+      {/* {clicked && <Link to={"/"}>Home</Link>} */}
     </>
   );
 }
