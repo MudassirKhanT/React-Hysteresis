@@ -9,6 +9,7 @@ import NotFound from "./NotFound.jsx";
 import Counter from "./Counter.jsx";
 import AboutUs from "./AboutUs.jsx";
 import Contact from "./Contact.jsx";
+import Data from "./Data.jsx";
 
 const Router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const Router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/data/:id",
+    element: <Data />,
     errorElement: <NotFound />,
   },
 ]);

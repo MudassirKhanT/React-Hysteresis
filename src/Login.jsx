@@ -28,7 +28,7 @@ function Login() {
 
   return (
     <>
-      <Counter />
+      {/* <Counter /> */}
       <form>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="htmlForm-label">
