@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Login from "./Login";
+import { createContext } from "react";
+
+export const dataContext = createContext();
 
 function Home() {
   const [apiData, setApiData] = useState([]);
@@ -28,11 +31,12 @@ function Home() {
   //     )
   //   }
 
-  console.log("Size:", apiData.length);
-
   return (
     <>
-      <Login value={data} />
+      <dataContext.Provider value={data}>
+        <Login />
+      </dataContext.Provider>
+
       <ul>
         {apiData &&
           apiData.map((api, index) => (

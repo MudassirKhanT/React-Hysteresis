@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Counter from "./Counter";
 
-function Login(props) {
+function Login() {
   const [pwd1, setPdw1] = useState("");
   const [pwd2, setPdw2] = useState("");
   const [match, setMatch] = useState(false);
@@ -24,11 +24,11 @@ function Login(props) {
   // function handleSubmit() {
   //   setClicked(true);
   // }
-  const gotData = props.value;
+  // const gotData = props.value;
 
   return (
     <>
-      <Counter value={gotData} />
+      <Counter />
       <form>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="htmlForm-label">
