@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Login from "./Login";
 
 function Home() {
   const [apiData, setApiData] = useState([]);
@@ -18,6 +19,7 @@ function Home() {
       console.log("Clean Up Function");
     };
   }, []);
+  const data = "Props Drilling";
   //   if(apiData.length==1){
   //     return(
   //         <>
@@ -30,6 +32,7 @@ function Home() {
 
   return (
     <>
+      <Login value={data} />
       <ul>
         {apiData &&
           apiData.map((api, index) => (

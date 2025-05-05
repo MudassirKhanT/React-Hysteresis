@@ -7,6 +7,8 @@ import Home from "./Home.jsx";
 import Login from "./Login.jsx";
 import NotFound from "./NotFound.jsx";
 import Counter from "./Counter.jsx";
+import AboutUs from "./AboutUs.jsx";
+import Contact from "./Contact.jsx";
 
 const Router = createBrowserRouter([
   {
@@ -22,6 +24,16 @@ const Router = createBrowserRouter([
   {
     path: "/count",
     element: <Counter />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/about",
+    element: <AboutUs />,
+    errorElement: <NotFound />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
     errorElement: <NotFound />,
   },
 ]);
